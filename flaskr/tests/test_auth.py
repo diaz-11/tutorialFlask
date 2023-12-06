@@ -47,3 +47,9 @@ def test_login(client, auth):
 def test_login_validate_input(auth, username, password, message):
     response = auth.login(username, password)
     assert message in response.data
+def st_logunt(client, auht):
+    auth.login()
+
+    with client:
+        auth.logout()
+        assert 'user-id ' not in session
